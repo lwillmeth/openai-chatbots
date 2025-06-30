@@ -1,0 +1,37 @@
+services:
+  chat_service:
+    build: ./backend
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./backend/.env.local
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    command: npm run dev
+
+  client_1:
+    build: ./the-bendt-baguette
+    ports:
+      - "3001:3000"
+    env_file:
+      - ./the-bendt-baguette/.env.local
+    volumes:
+      - ./the-bendt-baguette:/app
+      - /app/node_modules
+    command: npm run dev
+    depends_on:
+      - chat_service
+
+  client_2:
+    build: ./bend-birdfood-llc
+    ports:
+      - "3002:3000"
+    env_file:
+      - ./bend-birdfood-llc/.env.local
+    volumes:
+      - ./bend-birdfood-llc:/app
+      - /app/node_modules
+    command: npm run dev
+    depends_on:
+      - chat_service

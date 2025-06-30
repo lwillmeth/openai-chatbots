@@ -16,7 +16,7 @@ From the project root, run:
 docker compose up --build
 ```
 
-This command will build and start all services defined in [`docker-compose.yml`](./docker-compose.yml).
+This command will build and start all services defined in [`docker-compose.yml`](./docker-compose.yml).  The docker images are configured for watch mode and shouldn't need to be restarted unless you modify infra settings.
 
 ### 3. Accessing Services
 
@@ -45,7 +45,6 @@ docker compose down
 - [`backend/`](./backend/) – API, business logic, and database migrations
 - [`the-bendt-baguette/`](./the-bendt-baguette/) – Client 1, using bakery chatbot
 - [`bend-birdfood-llc/`](./bend-birdfood-llc/) – Client 2, using bird chatbot
-- [`docker-compose.yml`](./docker-compose.yml) – Multi-service orchestration
 
 ## More Information
 

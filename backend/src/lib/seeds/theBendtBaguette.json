@@ -1,0 +1,94 @@
+{
+  "apiKey": "ABC123",
+  "name": "The Bendt Baguette",
+  "description": "Our baguettes came out so Bendy we decided to call them bagels instead!",
+  "contact": {
+    "address": {
+      "street": "123 Oven St",
+      "city": "Bend",
+      "state": "Oregon",
+      "zipCode": "97701",
+      "full": "123 Oven St, Bend, Oregon 97703"
+    },
+    "phone": "(541) 555-DOUGH",
+    "email": "hello@thebendtbaguette.com",
+    "website": "https://thebendtbaguette.com"
+  },
+  "hours": {
+    "monday": "6:00am - 12:00pm",
+    "tuesday": "6:00am - 12:00pm",
+    "wednesday": "6:00am - 12:00pm",
+    "thursday": "6:00am - 12:00pm",
+    "friday": "6:00am - 12:00pm",
+    "saturday": "7:00am - 12:00pm",
+    "sunday": "7:00am - 12:00pm",
+    "special": {
+      "holidays": "Closed on Thanksgiving and Christmas",
+      "notes": "We open early to serve fresh pastries! Holiday hours may vary."
+    }
+  },
+  "products": [
+    {
+      "category": "Fresh Bagels",
+      "items": [
+        {
+          "name": "Plain Bagel",
+          "description": "Classic plain bagel, freshly baked daily",
+          "price": "$1.50",
+          "available": true
+        },
+        {
+          "name": "Onion Bagel", 
+          "description": "Savory bagel topped with dried onion flakes",
+          "price": "$1.75",
+          "available": true
+        },
+        {
+          "name": "Sesame Seed Bagel",
+          "description": "Traditional bagel topped with toasted sesame seeds",
+          "price": "$1.75",
+          "available": true
+        }
+      ]
+    },
+    {
+      "category": "Add-ons",
+      "items": [
+        {
+          "name": "Cream Cheese",
+          "description": "Fresh cream cheese spread",
+          "price": "$0.75",
+          "available": true
+        },
+        {
+          "name": "Butter",
+          "description": "Creamy butter spread",
+          "price": "$0.50",
+          "available": true
+        }
+      ]
+    }
+  ],
+  "services": [
+    "Custom bagel slicing and toasting",
+    "Special event catering and bulk orders", 
+    "Fresh coffee, espresso, and Oregon tea",
+    "Gift baskets and pastry platters"
+  ],
+  "policies": {
+    "returns": "We guarantee fresh pastries! If you're not satisfied, we'll make it right within 24 hours.",
+    "shipping": "Local delivery available within Bend city limits for orders over $25", 
+    "payment": "We accept cash, all major credit cards, Apple Pay, and Google Pay"
+  },
+  "assistantPersonality": {
+    "tone": "warm, friendly, and enthusiastic",
+    "style": "helpful and cheerful with a touch of playfulness",
+    "specialInstructions": [
+      "Always greet customers warmly and with enthusiasm for our pastries",
+      "Use fun, food-related expressions when appropriate (like 'That's the way the cookie crumbles!' or 'You're on a roll!')",
+      "If you don't know something specific, offer to connect them with our pastry team",
+      "Highlight our fresh, daily-baked quality and local Bend community connection",
+      "Be conversational and make customers feel welcome at The Bendt Baguette"
+    ]
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "apiKey": "BIRDY123",
+  "name": "Bend Birdfood LLC",
+  "location": "123 Flock Lane, Bend, OR 97701",
+  "hours": {
+    "monday": "5:00pm – 9:00pm",
+    "tuesday": "5:00pm – 9:00pm",
+    "wednesday": "5:00pm – 9:00pm",
+    "thursday": "5:00pm – 9:00pm",
+    "friday": "5:00pm – 9:00pm",
+    "saturday": "Closed",
+    "sunday": "Closed"
+  },
+  "services": [
+    "Retail bird food sales",
+    "Basic bird diet advice"
+  ],
+  "products": [
+    {
+      "name": "Sunflower Supreme Mix",
+      "description": "A hearty blend of sunflower seeds, millet, and cracked corn.",
+      "price": "$6.99/lb"
+    },
+    {
+      "name": "Berry & Nut Delight",
+      "description": "Dried berries, almonds, and pumpkin seeds for a sweet treat.",
+      "price": "$8.49/lb"
+    },
+    {
+      "name": "Gourmet Finch Feast",
+      "description": "Tiny seeds and grains perfect for finches and small songbirds.",
+      "price": "$7.49/lb"
+    }
+  ],
+  "policies": {
+    "returns": "No returns. All sales final.",
+    "cancellations": "Cancellations accepted up to 24 hours before pickup.",
+    "privacy": "We respect your privacy. No personal data is stored.",
+    "terms": "By using our service, you agree to our terms and conditions.",
+    "shipping": "Local delivery available within Bend city limits for orders over $25", 
+    "payment": "We accept cash, all major credit cards, Apple Pay, and Google Pay"
+  },
+  "assistantPersonality": {
+    "tone": "peckish",
+    "style": "quirky and fun",
+    "knowledge": "basic bird care and diet",
+    "greeting": "Welcome to Bend Birdfood LLC! We're here to help you find the perfect food for your feathered friends. Our menu is crafted with love and a touch of whim.",
+    "specialInstructions": "Keep responses light-hearted and fun. Use bird-related puns where appropriate. Avoid complex dietary advice."
+  }
+}

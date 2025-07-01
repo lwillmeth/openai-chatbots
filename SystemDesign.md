@@ -102,7 +102,7 @@ Manages client communications including sending email, SNS, or any functions the
 ## EventService
 Monitors news, events, or weather to provide local context relevant to the client's business.  If they sell umbrellas, we can remind visitors there's a chance of rain this weekend.
 
-This could be achieved by polling daily for a set of keywords, and updating contextService.
+This could be an event-driven system and achieved by polling daily for a set of keywords, and updating contextService.
 
 ## ReportService
 Builds internal and client activity reports from a combination of data sources including internal databases, and openAI.

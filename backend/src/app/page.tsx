@@ -1,10 +1,9 @@
 export default function Home() {
   return (
     <main style={{ fontFamily: "sans-serif", maxWidth: 600, margin: "2rem auto", padding: "2rem" }}>
-      <h1 style={{ fontSize: "2rem", marginBottom: "1rem" }}>Bakery Chat API</h1>
+      <h1 style={{ fontSize: "2rem", marginBottom: "1rem" }}>Chat API Backend</h1>
       <p>
-        Welcome to the general Chat API backend.<br />
-        This services customer service bots.
+        This supports customer service bots.
       </p>
       <h2 style={{ marginTop: "2rem", fontSize: "1.2rem" }}>POST <code>/api/chat</code></h2>
       <p>

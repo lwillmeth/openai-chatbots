@@ -46,9 +46,9 @@ export async function POST(request: NextRequest): Promise<NextResponse<ChatRespo
       );
     }
 
-    const body: ChatRequest = await request.json();
+    const chatRequest: ChatRequest = await request.json();
 
-    if (!body.messages || !Array.isArray(body.messages)) {
+    if (!chatRequest.messages || !Array.isArray(chatRequest.messages)) {
       return NextResponse.json(
         { message: '', error: 'Invalid request format.' },
         { status: 400 }
@@ -56,28 +56,27 @@ export async function POST(request: NextRequest): Promise<NextResponse<ChatRespo
     }
 
     // Get business context using the apiKey from the header
-    const businessRecord = LocalData.get(apiKey);
-    if (!businessRecord) {
-      console.log({ localData: LocalData.getAll() });
-      console.log({ apiKey, businessRecord });
+    const clientContext = LocalData.get(apiKey);
+    if (!clientContext) {
+      console.warn(`Could not find clientContext for ${apiKey}. This API key may be invalid.`);
       return NextResponse.json(
         { message: '', error: 'Invalid API key.  Please check your x-chat-service-api-key header.' },
         { status: 404 }
       );
     }
 
-    const businessInfo = typeof businessRecord.context === "string"
-      ? businessRecord.context
-      : JSON.stringify(businessRecord.context, null, 2);
+    const businessInfo = typeof clientContext.context === "string"
+      ? clientContext.context
+      : JSON.stringify(clientContext.context, null, 2);
 
-    const completion = await openai.chat.completions.create({
+    const chatResponse = await openai.chat.completions.create({
       model: 'gpt-3.5-turbo',
       messages: [
         {
           role: 'system',
-          content: `You are a helpful customer service assistant for our bakery. Here is the business information:\n\n${businessInfo}\n\nAlways provide accurate information about our business. If someone asks about something not covered, politely let them know you can connect them with a team member for more details.`
+          content: `You are a helpful customer service assistant for our business. Here is the business information:\n\n${businessInfo}\n\nAlways provide accurate information about our business. If someone asks about something not covered, politely let them know you can connect them with a team member for more details.`
         },
-        ...body.messages.map(msg => ({
+        ...chatRequest.messages.map(msg => ({
           role: msg.role,
           content: msg.content
         }))
@@ -85,8 +84,8 @@ export async function POST(request: NextRequest): Promise<NextResponse<ChatRespo
       max_tokens: 1000,
       temperature: 0.7,
     });
-
-    const message = completion.choices[0]?.message?.content || '';
+    // console.debug({ chatRequest, chatResponse });
+    const message = chatResponse.choices[0]?.message?.content || '';
 
     return NextResponse.json({ message }, { headers: corsHeaders });
   } catch (error) {

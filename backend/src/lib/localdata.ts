@@ -18,19 +18,16 @@ class LocalData {
 
   // Call loadSeeds when the class is first loaded
   private static _initialized = (() => {
-    console.log('Loading seeds from local data store...');
     LocalData.loadSeeds();
-    console.log('Seeds loaded successfully.');
-    console.log(LocalData.getAll());
     return true;
   })();
 
   private static loadSeeds() {
-    console.log(`Loading ${seedFiles.length} seed files..`);
+    console.debug(`Loading ${seedFiles.length} seed files..`);
 
     for (const seed of seedFiles) {
       try {
-        console.log(`Loading seed file: ${seed?.name}`);
+        console.debug(`Loading seed file: ${seed?.name}`);
         // Validate required fields
         if (!seed?.apiKey || !seed?.name) {
           console.warn(`Seed file is missing required 'apiKey' or 'name'. Skipping.`);
@@ -69,6 +66,5 @@ class LocalData {
     return { ...this.store };
   }
 }
-console.log("LocalData initialized:", LocalData.getAll());
 
 export default LocalData;

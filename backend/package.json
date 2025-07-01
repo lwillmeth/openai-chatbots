@@ -11,7 +11,8 @@
     "docker:down": "docker-compose down",
     "docker:logs": "docker-compose logs -f postgres",
     "docker:clean": "docker-compose down -v",
-    "dev:setup": "scripts/dev-setup.bat"
+    "dev:setup": "scripts/dev-setup.bat",
+    "test": "jest"
   },
   "dependencies": {
     "next": "15.3.4",
@@ -22,12 +23,15 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
+    "@types/jest": "^30.0.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.3.4",
+    "jest": "^30.0.3",
     "tailwindcss": "^4",
+    "ts-jest": "^29.4.0",
     "tsx": "^4.20.3",
     "typescript": "^5.8.3"
   }
